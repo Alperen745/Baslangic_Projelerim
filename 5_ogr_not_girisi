@@ -1,0 +1,39 @@
+int max = 0, min = 100, toplam = 0, adet = 5, not, imax = 0, imin = 0;
+   string isim = "", isimax = "", isimin = "";     
+        for (int i = 0; i < adet;i++)
+        {
+            System.Console.Write((i+1)+". Notunuzu giriniz :");
+            not = Convert.ToInt32(Console.ReadLine());
+            
+            if (not < 0 || not > 100)
+            {
+                System.Console.WriteLine("Geçersiz not girdiniz!");
+                i--;
+            }
+                
+            else
+            {
+                System.Console.WriteLine((i + 1)+". İsmini giriniz:");
+                isim = Console.ReadLine();
+                 toplam += not;
+
+                if (not > max)
+                 { 
+                    max = not;
+                    imax = i + 1;
+                    isimax = isim;
+                 }
+                if (not < min)
+                  {  
+                    min = not;
+                    imin = i + 1;
+                    isimin = isim;
+                   
+                  }
+                
+            }
+        }
+        System.Console.WriteLine("En yüksek not :{0}, {1}. not {2} isimli öğrenci", max, imax, isimax);
+        System.Console.WriteLine("En düşük not :{0}, {1}. not {2} isimli öğrenci", min, imin,isimin);
+        float ort = (float)toplam/adet;
+        System.Console.WriteLine("Ortalama :{0}", ort);
