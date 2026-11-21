@@ -1,0 +1,118 @@
+Console.WriteLine("1. oyuncu zar atıyor");
+Console.ReadKey();
+Random rnd = new Random();
+
+int zar1 = rnd.Next(1, 7);
+int zar2 = rnd.Next(1, 7);
+int oyuncu1 = zar1 + zar2;
+
+switch(zar1)
+{
+    case 1:
+        Console.WriteLine("\n * \n");
+        break;
+    case 2:
+        Console.WriteLine("*\n \n *");
+        break;
+    case 3:
+        Console.WriteLine("*\n * \n   *");
+        break;
+    case 4:
+        Console.WriteLine("* *\n \n* *");
+        break;
+    case 5:
+        Console.WriteLine("* *\n * \n* *");
+        break;
+    case 6:
+        Console.WriteLine("* * *\n \n* * *");
+        break;
+
+}
+
+Console.WriteLine("--------");
+switch(zar2)
+{
+    case 1:
+        Console.WriteLine("\n * \n");
+        break;
+    case 2:
+        Console.WriteLine("*\n \n *");
+        break;
+    case 3:
+        Console.WriteLine("*\n * \n   *");
+        break;
+    case 4:
+        Console.WriteLine("* *\n \n* *");
+        break;
+    case 5:
+        Console.WriteLine("* *\n * \n* *");
+        break;
+    case 6:
+        Console.WriteLine("* * *\n \n* * *");
+        break;
+
+}
+Console.WriteLine("1. oyuncunun attığı zarlar : "+zar1+ "-" +zar2);
+Console.WriteLine("1. oyuncunun attığı zarların toplamı : "+ (zar1 + zar2));
+
+Console.WriteLine("2. oyuncu zar atıyor");
+Console.ReadKey();
+int zar3 = rnd.Next(1,7);
+int zar4 = rnd.Next(1,7);
+int oyuncu2 = zar3 + zar4;
+
+switch(zar3)
+{
+    case 1:
+        Console.WriteLine("\n * \n");
+        break;
+    case 2:
+        Console.WriteLine("*\n \n *");
+        break;
+    case 3:
+        Console.WriteLine("*\n *  \n  *");
+        break;
+    case 4:
+        Console.WriteLine("* *\n \n* *");
+        break;
+    case 5:
+        Console.WriteLine("* *\n * \n* *");
+        break;
+    case 6:
+        Console.WriteLine("* * *\n \n* * *");
+        break;
+
+}
+Console.WriteLine("--------");
+
+switch(zar4)
+{
+    case 1:
+        Console.WriteLine("\n * \n");
+        break;
+    case 2:
+        Console.WriteLine("*\n \n *");
+        break;
+    case 3:
+        Console.WriteLine("*\n * \n   *");
+        break;
+    case 4:
+        Console.WriteLine("* *\n \n* *");
+        break;
+    case 5:
+        Console.WriteLine("* *\n * \n* *");
+        break;
+    case 6:
+        Console.WriteLine("* * *\n \n* * *");
+        break;
+
+}
+Console.WriteLine("2. oyuncunun attığı zarlar : "+zar3+ "-" +zar4);
+Console.WriteLine("2. oyuncunun attığı zarların toplamı : "+ (zar3+zar4));
+
+Console.Write("kazanan : ");
+if(oyuncu1 > oyuncu2)
+{
+    Console.WriteLine("1. oyuncu kazandı");
+}
+else Console.WriteLine("2. oyuncu kazandı");
