@@ -1,5 +1,8 @@
-int max = 0, min = 100, toplam = 0, adet = 5, not, imax = 0, imin = 0;
+int max = 0, min = 100, toplam = 0, adet, not, imax = 0, imin = 0;
    string isim = "", isimax = "", isimin = "";     
+
+      Console.Write("Not girişi yapılacak sayıyı giriniz :");
+      adet = int.Parse(Console.ReadLine());
         for (int i = 0; i < adet;i++)
         {
             System.Console.Write((i+1)+". Notunuzu giriniz :");
