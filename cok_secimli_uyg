@@ -1,0 +1,127 @@
+int menu;
+
+double vize, final, ort;
+double ortalama, s1, s2, toplam = 0;
+string hesapmak;
+int sayac = 0;
+
+for(int a = 0; a<1;)
+{
+System.Console.WriteLine("Kullanmak istediğiniz uygulamayı seçiniz");
+System.Console.WriteLine("1. Not ortalaması ve dersten geçme durumu \n2. Hesap makinesi \n3. İki sayı arasındaki tek sayılar \n4. Çıkış");
+menu = Convert.ToInt32(Console.ReadLine());
+switch(menu)
+{
+    case 1:
+        System.Console.WriteLine("Vize notunuzu giriniz : ");
+        vize = Convert.ToInt32(Console.ReadLine());
+        System.Console.WriteLine("Final notunuzu giriniz : ");
+        final = Convert.ToInt32(Console.ReadLine());
+        
+        if(vize <= 100 && vize >= 0 && final <= 100 && final >= 0)
+        {
+        
+            ort = (vize*0.4) + (final*0.6);
+            
+            if(ort < 45)
+            {
+                   System.Console.WriteLine("Dersten kaldınız. Ortalamanız :"+ort);
+             }
+             else System.Console.WriteLine("Başarıyla geçtiniz. Ortalamanız :"+ort);
+
+        
+        }
+        else 
+        {
+            System.Console.WriteLine("Hatalı not girdiniz");
+        }
+        
+    break;
+
+    case 2: 
+       
+        System.Console.WriteLine("Birinci sayıyı giriniz : ");
+        s1 = Convert.ToDouble(Console.ReadLine());
+        System.Console.WriteLine("ikinci sayıyı giriniz : ");
+        s2 = Convert.ToDouble(Console.ReadLine());
+        System.Console.WriteLine("toplama için 't' \nçıkartma için 'c' \nçarpma için 'x' \nbölme için 'b'");
+        hesapmak = Console.ReadLine();
+        switch(hesapmak)
+        {
+             case "t":
+                 System.Console.WriteLine("İşleminizin sonucu : "+(s1+s2));
+            break;
+
+             case "c":
+                System.Console.WriteLine("İşleminizin sonucu : "+(s1-s2));
+             break;
+       
+             case "x":
+                System.Console.WriteLine("İşleminizin sonucu : "+(s1*s2));
+             break;
+
+             case "b":
+             if(s2 == 0)
+             {
+                    System.Console.WriteLine("Hatalı işlem. Bölen sıfır olamaz!");
+             }
+              else
+                 {
+                     System.Console.WriteLine("İşleminizin sonucu : "+(s1/s2));
+                 }
+             break;
+             default:
+                System.Console.WriteLine("Hatalı seçim yaptınız. Lütfen geçerli harflerden biriniz seçiniz.");
+             break;
+        }
+       
+    break;
+
+    case 3:
+        System.Console.WriteLine("1. sayıyı giriniz : ");
+        s1 = Convert.ToInt32(Console.ReadLine());
+        System.Console.WriteLine("2. sayıyı giriniz : ");
+        s2 = Convert.ToInt32(Console.ReadLine());
+
+        if (s2 < s1)
+        {
+            System.Console.WriteLine("Başlangıç sayısı daha büyük olamaz!");
+        }
+        else 
+        {
+        
+            for(double i = s1;i <= s2;i++)
+            {
+                if(i%2 != 0)
+               {
+                   System.Console.WriteLine(i);
+                  toplam = toplam + i;
+                  sayac++;
+                
+              }
+            }
+
+            if (sayac > 0)
+            {
+            ortalama = toplam / sayac;
+            System.Console.WriteLine("Seçtiğiniz aralıktaki tek sayıların toplamı : "+toplam);
+            System.Console.WriteLine("Seçtiğiniz aralıktaki tek sayıların ortalaması : "+ortalama);
+            }
+            else
+            {
+                System.Console.WriteLine("Bu aralıkta tek sayı yok");
+            }
+        }
+        break;
+
+        case 4:
+           System.Console.WriteLine("Sistemden Çıkış yaptınız.");
+           a = 4; 
+        break;
+
+        
+    default:
+    System.Console.WriteLine("Hatalı tuşlama yaptınız. Lütfen menüdeki sayılardan birini seçin.");
+    break;
+}
+}
